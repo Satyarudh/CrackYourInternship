@@ -1,0 +1,20 @@
+# Dupicate number solved in  order of nlogn
+#you can also solve using cycle with slow and fast pointer tortoise method
+#slow by 1 and fast by 2 until they are equal and after that move by 1 both
+
+
+
+class Solution {
+    public int findDuplicate(int[] nums) {
+        Arrays.sort(nums);
+        int r=0;
+        for(int i=0;i<nums.length-1;i++)
+        {
+            if(nums[i]==nums[i+1])
+            {   r=i;
+                break;
+            }
+        }
+    return nums[r];
+    }
+}
