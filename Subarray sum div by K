@@ -1,0 +1,31 @@
+#Finding sum and remainder if it repeats adding count variable
+#if negative value present add k value to that
+
+class Solution {
+    public int subarraysDivByK(int[] nums, int k) {
+       int a=0;
+       HashMap<Integer,Integer> res=new HashMap<>();
+       int s,r;
+       s=r=0;
+       res.put(0,1);
+       for(int i:nums)
+       {
+           s+=i;
+           r=s%k;
+           if(r<0)
+           {
+               r+=k;
+           }
+           if(res.containsKey(r))
+           {
+               a+=res.get(r);
+               res.put(r,res.get(r)+1);
+           }
+           else
+           {
+               res.put(r,1);
+           }
+       }
+        return a;
+    }
+}
