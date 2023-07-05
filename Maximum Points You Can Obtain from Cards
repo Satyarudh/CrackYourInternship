@@ -1,4 +1,5 @@
 # finding out max sum of k cards drwan either through front or end
+#arrays----medium
 
  int maxScore(vector<int>& cardPoints, int k) {
         int n=cardPoints.size(),sum=0;
